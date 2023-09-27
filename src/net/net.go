@@ -277,3 +277,50 @@ func (v *Buffers) consume(n int64) {
 		*v = (*v)[1:]
 	}
 }
+
+// Implementation of the Conn interface.
+
+// Close closes the connection.
+func (c *conn) Close() error {
+	panic("unimplemented: net.Close")
+}
+
+// LocalAddr returns the local network address.
+// The Addr returned is shared by all invocations of LocalAddr, so
+// do not modify it.
+func (c *conn) LocalAddr() Addr {
+	panic("unimplemented: net.LocalAddr")
+}
+
+
+// Read implements the Conn Read method.
+func (c *conn) Read(b []byte) (int, error) {
+	panic("unimplemented: net.Read")
+}
+
+// Write implements the Conn Write method.
+func (c *conn) Write(b []byte) (int, error) {
+	panic("unimplemented: net.Write")
+}
+
+// RemoteAddr returns the remote network address.
+// The Addr returned is shared by all invocations of RemoteAddr, so
+// do not modify it.
+func (c *conn) RemoteAddr() Addr {
+	panic("unimplemented: net.RemoteAddr")
+}
+
+// SetDeadline implements the Conn SetDeadline method.
+func (c *conn) SetDeadline(t time.Time) error {
+	panic("unimplemented: net.SetDeadline")
+}
+
+// SetReadDeadline implements the Conn SetReadDeadline method.
+func (c *conn) SetReadDeadline(t time.Time) error {
+	panic("unimplemented: net.SetReadDeadline")
+}
+
+// SetWriteDeadline implements the Conn SetWriteDeadline method.
+func (c *conn) SetWriteDeadline(t time.Time) error {
+	panic("unimplemented: net.SetWriteDeadline")
+}
