@@ -1,3 +1,5 @@
+//go:build wasi || wasip1
+
 package net
 
 // BUG(mikio): On JS, WASIP1 and Plan 9, methods and functions related

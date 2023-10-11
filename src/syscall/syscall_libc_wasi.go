@@ -462,3 +462,40 @@ func libc_fdclosedir(unsafe.Pointer) int32
 //
 //export readdir
 func libc_readdir(unsafe.Pointer) *Dirent
+
+type Rlimit struct {
+	Cur uint64
+	Max uint64
+}
+
+type Termios struct {
+	Iflag     uint32
+	Oflag     uint32
+	Cflag     uint32
+	Lflag     uint32
+	Line      uint8
+	Cc        [32]uint8
+	Pad_cgo_0 [3]byte
+	Ispeed    uint32
+	Ospeed    uint32
+}
+
+const (
+	SYS_IOCTL                  = 16
+)
+
+const (
+	ECHO     = 0x8
+	ECHONL   = 0x40
+	ICANON   = 0x2
+	ISIG     = 0x1	
+)
+
+const (
+	SOL_SOCKET                       = 0x1
+	SO_LINGER                        = 0xd
+	SO_RCVTIMEO                      = 0x14
+	SO_SNDTIMEO                      = 0x15
+	SOL_TCP                          = 0x6
+	TCP_INFO                         = 0xb
+)

@@ -53,3 +53,41 @@ func (a *UDPAddr) opAddr() Addr {
 	}
 	return a
 }
+
+// UDPConn is the implementation of the Conn and PacketConn interfaces
+// for UDP network connections.
+type UDPConn struct {
+	conn
+}
+
+// ResolveUDPAddr returns an address of UDP end point.
+//
+// The network must be a UDP network name.
+//
+// If the host in the address parameter is not a literal IP address or
+// the port is not a literal port number, ResolveUDPAddr resolves the
+// address to an address of UDP end point.
+// Otherwise, it parses the address as a pair of literal IP address
+// and port number.
+// The address parameter can use a host name, but this is not
+// recommended, because it will return at most one of the host name's
+// IP addresses.
+//
+// See func Dial for a description of the network and address
+// parameters.
+func ResolveUDPAddr(network, address string) (*UDPAddr, error) {
+	panic("unimplemented: net.ResolveUDPAddr")
+}
+
+// ListenUDP acts like ListenPacket for UDP networks.
+//
+// The network must be a UDP network name; see func Dial for details.
+//
+// If the IP field of laddr is nil or an unspecified IP address,
+// ListenUDP listens on all available IP addresses of the local system
+// except multicast IP addresses.
+// If the Port field of laddr is 0, a port number is automatically
+// chosen.
+func ListenUDP(network string, laddr *UDPAddr) (*UDPConn, error) {
+	panic("unimplemented: net.ListenUDP")
+}
